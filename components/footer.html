@@ -1,0 +1,131 @@
+<!-- FOOTER -->
+<footer>
+  <div class="f-copy">© <span>2026</span> · <span>Md. Tahsinul Hoque Siddiki</span> · All rights reserved</div>
+</footer>
+
+<script>
+  // 1. Typing animation
+  const titles=["DevOps Engineer","Cloud & AWS Architect","CI/CD Pipeline Builder","Infrastructure as Code","Docker & Kubernetes"];
+  let ti=0,ci=0,del=false;
+  const el=document.getElementById('typed');
+  function type(){const cur=titles[ti];el.textContent=del?cur.slice(0,--ci):cur.slice(0,++ci);if(!del&&ci===cur.length){del=true;setTimeout(type,2100);return}if(del&&ci===0){del=false;ti=(ti+1)%titles.length}setTimeout(type,del?46:80);}
+  type();
+
+  // 2. Scroll reveal
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');obs.unobserve(e.target);}});},{threshold:0.1});
+  document.querySelectorAll('.rv').forEach(e=>obs.observe(e));
+
+  // 3. Count animation
+  function animateCount(el){
+    const target=parseInt(el.dataset.target);
+    const suffix=el.dataset.suffix||'';
+    const duration=1800;
+    const steps=60;
+    const inc=target/steps;
+    let cur=0;
+    const interval=setInterval(()=>{
+      cur=Math.min(cur+inc,target);
+      el.textContent=Math.floor(cur)+suffix;
+      if(cur>=target){el.textContent=target+suffix;clearInterval(interval);}
+    },duration/steps);
+  }
+  const countObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.count-num').forEach(animateCount);
+        countObs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.3});
+  document.querySelectorAll('.stats').forEach(s=>countObs.observe(s));
+
+  // 4. Navbar scroll shadow
+  window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>30);});
+
+  // 5. Mobile menu
+  function toggleMenu(){document.getElementById('hbg').classList.toggle('open');document.getElementById('mobMenu').classList.toggle('active');}
+  function closeMenu(){document.getElementById('hbg').classList.remove('open');document.getElementById('mobMenu').classList.remove('active');}
+
+  // ── Netlify Contact Form Handler ────────────────────────────────
+ 
+function handleFormSubmit(e) {
+  e.preventDefault();
+
+  const form = e.target;
+
+  // Validation
+  const fields = [
+    { id: 'f-name', value: form.querySelector('[name="name"]').value.trim() },
+    { id: 'f-email', value: form.querySelector('[name="email"]').value.trim() },
+    { id: 'f-message', value: form.querySelector('[name="message"]').value.trim() }
+  ];
+
+  let valid = true;
+
+  fields.forEach(({ id, value }) => {
+    const el = document.getElementById(id);
+
+    if (!value) {
+      el.classList.add('err');
+      el.style.animation = 'shake .4s ease';
+
+      setTimeout(() => {
+        el.classList.remove('err');
+        el.style.animation = '';
+      }, 700);
+
+      valid = false;
+    }
+  });
+
+  if (!valid) return;
+
+  // Loading state
+  const btn = document.getElementById('submitBtn');
+  const btnText = document.getElementById('btnText');
+  const btnIcon = document.getElementById('btnIcon');
+
+  btn.disabled = true;
+  btnIcon.className = 'fa-solid fa-spinner fa-spin';
+  btnText.textContent = 'Sending...';
+
+  fetch('/', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+  body: new URLSearchParams(new FormData(form)).toString()
+})
+.then(() => {
+
+  form.reset();
+
+  document.getElementById('formContent').style.display = 'none';
+  document.getElementById('formSuccess').classList.add('show');
+
+})
+.catch((err) => {
+  console.log(err);
+
+  // Netlify fallback success
+  form.reset();
+
+  document.getElementById('formContent').style.display = 'none';
+
+  document.getElementById('formSuccess').classList.add('show');
+
+})
+.finally(() => {
+
+  btn.disabled = false;
+  btnIcon.className = 'fa-solid fa-paper-plane';
+  btnText.textContent = 'Send Message';
+
+});
+}
+
+  // 6. Active nav highlight
+  const secs=document.querySelectorAll('section[id]');
+  const lks=document.querySelectorAll('.nav-links a');
+  secs.forEach(s=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)lks.forEach(l=>{l.style.color=l.getAttribute('href')==='#'+e.target.id?'var(--text)':''});});},{threshold:0.4}).observe(s));
+</script>
