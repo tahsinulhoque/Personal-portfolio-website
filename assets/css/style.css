@@ -3351,3 +3351,581 @@
   }
 
 }
+
+/* =========================================================
+   RESEARCH & PUBLICATIONS
+   ========================================================= */
+
+#research {
+  padding: 90px 0 95px;
+}
+
+.research-header {
+  margin-bottom: 50px;
+}
+
+.research-subtitle {
+  max-width: 680px;
+  margin: 0;
+  color: #8fa2bb;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PUBLICATION CARD
+   ========================================================= */
+
+.research-card {
+  position: relative;
+  width: min(1180px, 90%);
+  margin: 0 auto;
+
+  padding: 42px 50px 38px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 31, 51, 0.94),
+      rgba(8, 20, 36, 0.97)
+    );
+
+  border: 1px solid rgba(0, 200, 255, 0.16);
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* TOP GLOW */
+
+.research-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 45px;
+  right: 45px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 200, 255, 0.65),
+      transparent
+    );
+
+  opacity: 0.7;
+}
+
+
+/* BACKGROUND GLOW */
+
+.research-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  top: -170px;
+  right: -100px;
+
+  background: rgba(0, 200, 255, 0.08);
+
+  border-radius: 50%;
+
+  filter: blur(55px);
+
+  pointer-events: none;
+}
+
+
+/* HOVER */
+
+.research-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(0, 200, 255, 0.42);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.28),
+    0 0 30px rgba(0, 200, 255, 0.08),
+    inset 0 0 30px rgba(0, 200, 255, 0.025);
+}
+
+
+/* =========================================================
+   TOP META
+   ========================================================= */
+
+.research-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+.research-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 9px 16px;
+
+  border: 1px solid rgba(0, 200, 255, 0.25);
+  border-radius: 30px;
+
+  background: rgba(0, 200, 255, 0.045);
+
+  color: #00c8ff;
+
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.research-type i {
+  font-size: 12px;
+}
+
+
+.research-date {
+  padding: 9px 16px;
+
+  border: 1px solid rgba(143, 162, 187, 0.16);
+  border-radius: 30px;
+
+  background: rgba(143, 162, 187, 0.045);
+
+  color: #73859d;
+
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.research-title {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1120px;
+
+  margin: 0 0 34px;
+
+  color: #f4f8ff;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(27px, 3vw, 38px);
+
+  font-weight: 750;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   CONFERENCE
+   ========================================================= */
+
+.research-conference {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 16px;
+
+  margin-bottom: 30px;
+}
+
+.research-conf-icon {
+  flex: 0 0 38px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1px;
+
+  border-radius: 10px;
+
+  background: rgba(0, 200, 255, 0.09);
+
+  color: #00c8ff;
+
+  font-size: 17px;
+}
+
+
+.research-conf-name {
+  color: #dce6f5;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 16px;
+  font-weight: 650;
+
+  line-height: 1.5;
+}
+
+
+.research-location {
+  margin-top: 5px;
+
+  color: #73859d;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   RESEARCH TAGS
+   ========================================================= */
+
+.research-tags {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 8px;
+}
+
+.research-tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 14px;
+
+  border: 1px solid rgba(0, 200, 255, 0.22);
+  border-radius: 30px;
+
+  background: rgba(0, 200, 255, 0.035);
+
+  color: #00c8ff;
+
+  font-family: "IBM Plex Mono", monospace;
+
+  font-size: 10px;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.research-tag:hover {
+  transform: translateY(-2px);
+
+  background: rgba(0, 200, 255, 0.09);
+
+  border-color: rgba(0, 200, 255, 0.48);
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.research-divider {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 1px;
+
+  margin: 34px 0 24px;
+
+  background: rgba(143, 162, 187, 0.12);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.research-footer {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.research-authors {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #667991;
+
+  font-family: "IBM Plex Mono", monospace;
+
+  font-size: 11px;
+}
+
+.research-authors i {
+  color: #00c8ff;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.research-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.research-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 46px;
+
+  padding: 0 17px;
+
+  border: 1px solid rgba(0, 200, 255, 0.28);
+
+  border-radius: 10px;
+
+  background: rgba(0, 200, 255, 0.045);
+
+  color: #f4f8ff;
+
+  font-family: "IBM Plex Mono", monospace;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease;
+}
+
+
+.research-btn i {
+  color: #00c8ff;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* FULL PAPER BUTTON */
+
+.research-btn-primary {
+  border-color: rgba(0, 200, 255, 0.42);
+
+  background: rgba(0, 200, 255, 0.08);
+
+  color: #00c8ff;
+
+  box-shadow:
+    0 0 14px rgba(0, 200, 255, 0.04);
+}
+
+
+/* HOVER */
+
+.research-btn:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(0, 200, 255, 0.72);
+
+  background: rgba(0, 200, 255, 0.10);
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.24),
+    0 0 22px rgba(0, 200, 255, 0.12);
+
+  color: #ffffff;
+}
+
+
+.research-btn:hover i {
+  transform: translate(2px, -2px);
+
+  color: #00c8ff;
+}
+
+
+.research-btn-primary:hover {
+  color: #ffffff;
+
+  border-color: #00c8ff;
+
+  background: rgba(0, 200, 255, 0.13);
+
+  box-shadow:
+    0 8px 26px rgba(0, 0, 0, 0.25),
+    0 0 28px rgba(0, 200, 255, 0.18);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .research-card {
+    padding: 36px 34px 32px;
+  }
+
+  .research-title {
+    font-size: 30px;
+  }
+
+  .research-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .research-actions {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #research {
+    padding: 70px 0 75px;
+  }
+
+  .research-header {
+    margin-bottom: 38px;
+  }
+
+  .research-card {
+    width: 90%;
+
+    padding: 28px 22px 26px;
+
+    border-radius: 18px;
+  }
+
+  .research-top {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-bottom: 24px;
+  }
+
+  .research-title {
+    margin-bottom: 26px;
+
+    font-size: 25px;
+    line-height: 1.32;
+  }
+
+  .research-conference {
+    gap: 12px;
+  }
+
+  .research-conf-name {
+    font-size: 14px;
+  }
+
+  .research-location {
+    font-size: 12px;
+  }
+
+  .research-tags {
+    gap: 8px;
+  }
+
+  .research-tag {
+    padding: 7px 11px;
+
+    font-size: 9px;
+  }
+
+  .research-actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .research-btn {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .research-card,
+  .research-btn,
+  .research-tag,
+  .research-btn i {
+    transition: none;
+  }
+
+}
