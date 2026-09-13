@@ -1758,3 +1758,674 @@
   }
 
 }
+
+/* =========================================================
+   HOW I WORK
+   ========================================================= */
+
+#how-i-work {
+  padding: 90px 0 95px;
+}
+
+.hiw-inner {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.hiw-header {
+  margin-bottom: 58px;
+}
+
+.hiw-badge {
+  display: inline-block;
+  padding: 8px 16px;
+
+  border: 1px solid rgba(0, 200, 255, 0.25);
+  border-radius: 30px;
+
+  color: #00c8ff;
+
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hiw-title {
+  margin: 22px 0 18px;
+
+  color: #f4f8ff;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.04;
+}
+
+.hiw-title span {
+  color: #00c8ff;
+}
+
+.hiw-subtitle {
+  max-width: 650px;
+  margin: 0;
+
+  color: #8fa2bb;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   WORKFLOW
+   ========================================================= */
+
+.hiw-workflow {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 14px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   FLOW LINE
+   ========================================================= */
+
+.hiw-line {
+  position: absolute;
+
+  top: 54px;
+  left: 10%;
+  right: 10%;
+
+  height: 1px;
+
+  background: rgba(0, 200, 255, 0.12);
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+.hiw-line-progress {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 200, 255, 0.65),
+      transparent
+    );
+
+  transform-origin: left center;
+
+  animation: hiw-line-flow 4s ease-in-out infinite;
+}
+
+@keyframes hiw-line-flow {
+
+  0% {
+    transform: scaleX(0);
+    opacity: 0.2;
+  }
+
+  45% {
+    transform: scaleX(1);
+    opacity: 0.8;
+  }
+
+  70% {
+    transform: scaleX(1);
+    opacity: 0.45;
+  }
+
+  100% {
+    transform: scaleX(0);
+    opacity: 0.2;
+  }
+
+}
+
+
+/* =========================================================
+   MOVING PARTICLES
+   ========================================================= */
+
+.hiw-particle {
+  position: absolute;
+
+  top: 50%;
+  left: 0;
+
+  width: 7px;
+  height: 7px;
+
+  margin-top: -3px;
+
+  border-radius: 50%;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  animation:
+    hiw-particle-move 5s linear infinite;
+}
+
+
+/* ---------- CYAN ---------- */
+
+.particle-cyan {
+  background: #00c8ff;
+
+  box-shadow:
+    0 0 7px rgba(0, 200, 255, 1),
+    0 0 18px rgba(0, 200, 255, 0.75),
+    0 0 32px rgba(0, 200, 255, 0.35);
+
+  animation-delay: 0s;
+}
+
+
+/* ---------- GREEN ---------- */
+
+.particle-green {
+  background: #22c55e;
+
+  box-shadow:
+    0 0 7px rgba(34, 197, 94, 1),
+    0 0 18px rgba(34, 197, 94, 0.75),
+    0 0 32px rgba(34, 197, 94, 0.35);
+
+  animation-delay: 1.25s;
+}
+
+
+/* ---------- RED ---------- */
+
+.particle-red {
+  background: #ef4444;
+
+  box-shadow:
+    0 0 7px rgba(239, 68, 68, 1),
+    0 0 18px rgba(239, 68, 68, 0.75),
+    0 0 32px rgba(239, 68, 68, 0.35);
+
+  animation-delay: 2.5s;
+}
+
+
+/* ---------- ORANGE ---------- */
+
+.particle-orange {
+  background: #ff9900;
+
+  box-shadow:
+    0 0 7px rgba(255, 153, 0, 1),
+    0 0 18px rgba(255, 153, 0, 0.75),
+    0 0 32px rgba(255, 153, 0, 0.35);
+
+  animation-delay: 3.75s;
+}
+
+
+/* =========================================================
+   PARTICLE MOVEMENT
+   ========================================================= */
+
+@keyframes hiw-particle-move {
+
+  0% {
+    left: 0%;
+    opacity: 0;
+    transform: scale(0.65);
+  }
+
+  7% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  45% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0;
+    transform: scale(0.65);
+  }
+
+}
+
+
+/* =========================================================
+   WORKFLOW STEP
+   ========================================================= */
+
+.hiw-step {
+  position: relative;
+
+  z-index: 2;
+
+  min-height: 275px;
+
+  padding: 24px 20px 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 31, 51, 0.92),
+      rgba(8, 20, 36, 0.96)
+    );
+
+  border: 1px solid rgba(0, 200, 255, 0.14);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* =========================================================
+   TOP GLOW
+   ========================================================= */
+
+.hiw-step::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 18px;
+  right: 18px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 200, 255, 0.5),
+      transparent
+    );
+
+  opacity: 0.6;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+   ========================================================= */
+
+.hiw-step::after {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  top: -80px;
+  right: -70px;
+
+  background: rgba(0, 200, 255, 0.08);
+
+  border-radius: 50%;
+
+  filter: blur(30px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   STEP NUMBER
+   ========================================================= */
+
+.hiw-step-number {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  color: rgba(0, 200, 255, 0.35);
+
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.hiw-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 200, 255, 0.12),
+      rgba(0, 100, 160, 0.07)
+    );
+
+  border: 1px solid rgba(0, 200, 255, 0.22);
+
+  font-size: 23px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+}
+
+
+/* =========================================================
+   TOOL / BRAND COLORS
+   ========================================================= */
+
+
+/* ---------- CODE / GIT ---------- */
+
+.hiw-code .hiw-icon {
+  color: #f05032;
+}
+
+
+/* ---------- BUILD / CI ---------- */
+
+.hiw-build .hiw-icon {
+  color: #f0b429;
+}
+
+
+/* ---------- DOCKER ---------- */
+
+.hiw-containerize .hiw-icon {
+  color: #2496ed;
+}
+
+
+/* ---------- AWS / DEPLOY ---------- */
+
+.hiw-deploy .hiw-icon {
+  color: #ff9900;
+}
+
+
+/* ---------- MONITORING ---------- */
+
+.hiw-monitor .hiw-icon {
+  color: #e6522c;
+}
+
+
+/* =========================================================
+   STEP TITLE
+   ========================================================= */
+
+.hiw-step-title {
+  margin-bottom: 12px;
+
+  color: #f4f8ff;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   STEP DESCRIPTION
+   ========================================================= */
+
+.hiw-step-text {
+  color: #8fa2bb;
+
+  font-size: 11.5px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TECHNOLOGIES
+   ========================================================= */
+
+.hiw-tech {
+  margin-top: 17px;
+
+  color: #00c8ff;
+
+  font-family: "IBM Plex Mono", monospace;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.hiw-step:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(0, 200, 255, 0.5);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 38, 62, 0.97),
+      rgba(8, 22, 39, 0.99)
+    );
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(0, 200, 255, 0.12),
+    0 0 50px rgba(0, 200, 255, 0.06),
+    inset 0 0 25px rgba(0, 200, 255, 0.035);
+}
+
+
+/* =========================================================
+   ICON HOVER
+   ========================================================= */
+
+.hiw-step:hover .hiw-icon {
+  transform: translateY(-3px) scale(1.06);
+
+  border-color: currentColor;
+
+  filter: brightness(1.12);
+}
+
+
+/* =========================================================
+   BRAND-SPECIFIC ICON GLOW
+   ========================================================= */
+
+
+/* ---------- CODE ---------- */
+
+.hiw-code:hover .hiw-icon {
+  box-shadow:
+    0 0 14px rgba(240, 80, 50, 0.45),
+    0 0 32px rgba(240, 80, 50, 0.22),
+    inset 0 0 18px rgba(240, 80, 50, 0.08);
+}
+
+
+/* ---------- BUILD ---------- */
+
+.hiw-build:hover .hiw-icon {
+  box-shadow:
+    0 0 14px rgba(240, 180, 41, 0.45),
+    0 0 32px rgba(240, 180, 41, 0.22),
+    inset 0 0 18px rgba(240, 180, 41, 0.08);
+}
+
+
+/* ---------- DOCKER ---------- */
+
+.hiw-containerize:hover .hiw-icon {
+  box-shadow:
+    0 0 14px rgba(36, 150, 237, 0.5),
+    0 0 32px rgba(36, 150, 237, 0.24),
+    inset 0 0 18px rgba(36, 150, 237, 0.08);
+}
+
+
+/* ---------- AWS ---------- */
+
+.hiw-deploy:hover .hiw-icon {
+  box-shadow:
+    0 0 14px rgba(255, 153, 0, 0.5),
+    0 0 32px rgba(255, 153, 0, 0.25),
+    inset 0 0 18px rgba(255, 153, 0, 0.08);
+}
+
+
+/* ---------- MONITORING ---------- */
+
+.hiw-monitor:hover .hiw-icon {
+  box-shadow:
+    0 0 14px rgba(230, 82, 46, 0.5),
+    0 0 32px rgba(230, 82, 46, 0.24),
+    inset 0 0 18px rgba(230, 82, 46, 0.08);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .hiw-workflow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .hiw-line {
+    display: none;
+  }
+
+  .hiw-step {
+    min-height: 245px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #how-i-work {
+    padding: 70px 0 75px;
+  }
+
+  .hiw-header {
+    margin-bottom: 40px;
+  }
+
+  .hiw-title {
+    font-size: 42px;
+  }
+
+  .hiw-subtitle {
+    font-size: 15px;
+  }
+
+  .hiw-workflow {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .hiw-step {
+    min-height: auto;
+    padding: 24px 22px 22px;
+  }
+
+  .hiw-icon {
+    width: 52px;
+    height: 52px;
+
+    font-size: 22px;
+
+    margin-bottom: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hiw-line-progress,
+  .hiw-particle,
+  .hiw-step,
+  .hiw-icon {
+    animation: none;
+    transition: none;
+  }
+
+}
