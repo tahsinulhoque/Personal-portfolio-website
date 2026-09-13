@@ -361,4 +361,871 @@
       .photo-glow{width:260px;height:260px;}
       .photo-badge{display:none;}
     }
-  
+/* =========================================================
+   WHAT I BUILD
+   ========================================================= */
+
+#what-i-build {
+  padding: 60px 0;
+}
+
+.wib-inner {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+}
+
+
+/* ---------- Header ---------- */
+
+.wib-header {
+  margin-bottom: 45px;
+}
+
+.wib-label {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid rgba(0, 200, 255, 0.25);
+  border-radius: 30px;
+  color: #00c8ff;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.wib-header h2 {
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.05;
+  margin: 0 0 20px;
+  font-weight: 800;
+}
+
+.wib-header h2 span {
+  color: #00c8ff;
+  display: block;
+}
+
+.wib-header p {
+  max-width: 680px;
+  color: #8fa2bb;
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* ---------- Main Layout ---------- */
+
+.wib-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+
+/* ---------- Orbit Visual ---------- */
+
+.wib-visual {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  height: 470px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wib-orbit {
+  position: absolute;
+  border: 1px solid rgba(0, 200, 255, 0.18);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.wib-orbit-outer {
+  width: 420px;
+  height: 420px;
+}
+
+.wib-orbit-inner {
+  width: 285px;
+  height: 285px;
+  border-color: rgba(0, 200, 255, 0.28);
+}
+
+
+/* ---------- Center Core ---------- */
+
+.wib-core {
+  position: relative;
+  z-index: 5;
+
+  width: 155px;
+  height: 155px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #101a2a;
+
+  border: 1px solid rgba(0, 200, 255, 0.55);
+
+  box-shadow:
+    0 0 35px rgba(0, 200, 255, 0.12),
+    inset 0 0 35px rgba(0, 200, 255, 0.05);
+}
+
+.wib-core > div {
+  width: 100%;
+  text-align: center;
+}
+
+.wib-core span {
+  display: block;
+  width: 100%;
+
+  color: #8295ae;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  margin-bottom: 7px;
+
+  text-align: center;
+}
+
+.wib-core strong {
+  display: block;
+  width: 100%;
+
+  color: #f4f8ff;
+
+  font-size: 21px;
+  line-height: 1.08;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+.wib-core em {
+  display: block;
+
+  color: #00c8ff;
+
+  font-style: normal;
+
+  text-align: center;
+}
+
+
+/* ---------- Orbit Nodes ---------- */
+
+.wib-node {
+  position: absolute;
+  z-index: 6;
+
+  width: 100px;
+  min-height: 82px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #101a2a;
+
+  border: 1px solid rgba(0, 200, 255, 0.18);
+
+  border-radius: 15px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.wib-node:hover {
+  border-color: rgba(0, 200, 255, 0.7);
+
+  box-shadow:
+    0 0 25px rgba(0, 200, 255, 0.12);
+}
+
+.wib-node-icon {
+  font-size: 25px;
+  line-height: 1;
+
+  margin-bottom: 7px;
+}
+
+.wib-node strong {
+  color: #f4f8ff;
+  font-size: 12px;
+}
+
+.wib-node small {
+  color: #8295ae;
+  font-size: 9px;
+
+  margin-top: 3px;
+}
+
+
+/* ---------- Node Positions ---------- */
+
+.wib-node-aws {
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.wib-node-docker {
+  top: 98px;
+  right: 12px;
+}
+
+.wib-node-terraform {
+  bottom: 62px;
+  right: 52px;
+}
+
+.wib-node-kubernetes {
+  bottom: 62px;
+  left: 52px;
+}
+
+.wib-node-cicd {
+  top: 98px;
+  left: 12px;
+}
+
+.wib-node-monitoring {
+  bottom: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+
+/* ---------- Build Cards ---------- */
+
+.wib-cards {
+  display: grid;
+  gap: 13px;
+}
+
+.wib-card {
+  display: flex;
+  gap: 15px;
+
+  padding: 20px;
+
+  background: rgba(13, 25, 42, 0.72);
+
+  border: 1px solid rgba(0, 200, 255, 0.14);
+
+  border-radius: 16px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.wib-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(0, 200, 255, 0.5);
+
+  background: rgba(13, 29, 48, 0.9);
+}
+
+.wib-card-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(0, 200, 255, 0.08);
+
+  font-size: 20px;
+}
+
+.wib-card h3 {
+  color: #f4f8ff;
+
+  font-size: 15px;
+
+  margin: 0 0 7px;
+}
+
+.wib-card p {
+  color: #8fa2bb;
+
+  font-size: 12px;
+  line-height: 1.55;
+
+  margin: 0 0 9px;
+}
+
+.wib-card small {
+  color: #00c8ff;
+
+  font-size: 9px;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   WHAT I BUILD — RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .wib-content {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .wib-visual {
+    max-width: 520px;
+  }
+
+  .wib-cards {
+    max-width: 650px;
+
+    width: 100%;
+
+    margin: auto;
+  }
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+
+  #what-i-build {
+    padding: 55px 0;
+  }
+
+  .wib-header {
+    margin-bottom: 35px;
+  }
+
+  .wib-header h2 {
+    font-size: 38px;
+  }
+
+  .wib-header p {
+    font-size: 15px;
+  }
+
+  .wib-visual {
+    height: 380px;
+  }
+
+  .wib-orbit-outer {
+    width: 325px;
+    height: 325px;
+  }
+
+  .wib-orbit-inner {
+    width: 220px;
+    height: 220px;
+  }
+
+  .wib-core {
+    width: 125px;
+    height: 125px;
+  }
+
+  .wib-core span {
+    font-size: 8px;
+  }
+
+  .wib-core strong {
+    font-size: 17px;
+  }
+
+  .wib-node {
+    width: 82px;
+    min-height: 70px;
+  }
+
+  .wib-node-icon {
+    font-size: 20px;
+  }
+
+  .wib-node strong {
+    font-size: 10px;
+  }
+
+  .wib-node small {
+    font-size: 8px;
+  }
+
+  .wib-node-aws {
+    top: 2px;
+  }
+
+  .wib-node-docker {
+    top: 82px;
+    right: 0;
+  }
+
+  .wib-node-cicd {
+    top: 82px;
+    left: 0;
+  }
+
+  .wib-node-terraform {
+    bottom: 43px;
+    right: 23px;
+  }
+
+  .wib-node-kubernetes {
+    bottom: 43px;
+    left: 23px;
+  }
+
+  .wib-node-monitoring {
+    bottom: 0;
+  }
+
+  .wib-card {
+    padding: 17px;
+  }
+
+  .wib-card h3 {
+    font-size: 14px;
+  }
+
+  .wib-card p {
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   WHAT I BUILD — PROFESSIONAL ANIMATION
+   ========================================================= */
+
+/* ---------- Orbit Motion ---------- */
+
+.wib-orbit-outer {
+  animation: wibOrbitOuter 28s linear infinite;
+}
+
+.wib-orbit-inner {
+  animation: wibOrbitInner 20s linear infinite reverse;
+}
+
+@keyframes wibOrbitOuter {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wibOrbitInner {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ---------- Core Pulse ---------- */
+
+.wib-core {
+  animation: wibCorePulse 4s ease-in-out infinite;
+}
+
+@keyframes wibCorePulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 35px rgba(0, 200, 255, 0.12),
+      inset 0 0 35px rgba(0, 200, 255, 0.05);
+  }
+
+  50% {
+    box-shadow:
+      0 0 55px rgba(0, 200, 255, 0.22),
+      inset 0 0 45px rgba(0, 200, 255, 0.08);
+  }
+}
+
+
+/* ---------- Technology Nodes ---------- */
+
+.wib-node {
+  animation: wibNodeFloat 4s ease-in-out infinite;
+}
+
+@keyframes wibNodeFloat {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+
+/* ---------- Different Timing For Each Node ---------- */
+
+.wib-node-aws {
+  animation-delay: 0s;
+}
+
+.wib-node-docker {
+  animation-delay: -0.8s;
+}
+
+.wib-node-cicd {
+  animation-delay: -1.5s;
+}
+
+.wib-node-kubernetes {
+  animation-delay: -2.2s;
+}
+
+.wib-node-terraform {
+  animation-delay: -2.9s;
+}
+
+.wib-node-monitoring {
+  animation-delay: -3.6s;
+}
+
+
+/* ---------- Node Glow ---------- */
+
+.wib-node-icon {
+  animation: wibIconPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes wibIconPulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(0, 200, 255, 0));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 8px rgba(0, 200, 255, 0.25));
+  }
+}
+
+
+/* ---------- Card Entrance / Hover ---------- */
+
+.wib-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.wib-card::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 70%;
+  height: 1px;
+
+  background: rgba(0, 200, 255, 0.65);
+
+  transition: left 0.7s ease;
+}
+
+.wib-card:hover::before {
+  left: 120%;
+}
+
+
+/* ---------- Card Hover ---------- */
+
+.wib-card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* ---------- Accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .wib-orbit-outer,
+  .wib-orbit-inner,
+  .wib-core,
+  .wib-node,
+  .wib-node-icon {
+    animation: none;
+  }
+
+  .wib-card::before {
+    display: none;
+  }
+}
+
+/* =========================================================
+   WHAT I BUILD — MOVING DATA SIGNALS
+   ========================================================= */
+
+.wib-visual {
+  isolation: isolate;
+}
+
+
+/* ---------- Signal Base ---------- */
+
+.wib-signal {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  display: block;
+
+  border-radius: 50%;
+
+  z-index: 4;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CYAN SIGNAL — OUTER ORBIT
+   ========================================================= */
+
+.wib-signal-cyan {
+  width: 7px;
+  height: 7px;
+
+  background: #00c8ff;
+
+  box-shadow:
+    0 0 7px rgba(0, 200, 255, 0.95),
+    0 0 16px rgba(0, 200, 255, 0.65),
+    0 0 30px rgba(0, 200, 255, 0.25);
+
+  animation: wibSignalOuter 12s linear infinite;
+}
+
+
+/* =========================================================
+   GREEN SIGNAL — OUTER ORBIT
+   ========================================================= */
+
+.wib-signal-green {
+  width: 6px;
+  height: 6px;
+
+  background: #5ee6a8;
+
+  box-shadow:
+    0 0 7px rgba(94, 230, 168, 0.9),
+    0 0 16px rgba(94, 230, 168, 0.5);
+
+  animation: wibSignalOuterReverse 17s linear infinite;
+}
+
+
+/* =========================================================
+   ORANGE SIGNAL — INNER ORBIT
+   ========================================================= */
+
+.wib-signal-orange {
+  width: 6px;
+  height: 6px;
+
+  background: #ff9f43;
+
+  box-shadow:
+    0 0 7px rgba(255, 159, 67, 0.95),
+    0 0 17px rgba(255, 159, 67, 0.55);
+
+  animation: wibSignalInner 9s linear infinite;
+}
+
+
+/* =========================================================
+   OUTER ORBIT — CLOCKWISE
+   ========================================================= */
+
+@keyframes wibSignalOuter {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg)
+      translateX(210px);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg)
+      translateX(210px);
+  }
+}
+
+
+/* =========================================================
+   OUTER ORBIT — REVERSE
+   ========================================================= */
+
+@keyframes wibSignalOuterReverse {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg)
+      translateX(210px);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-360deg)
+      translateX(210px);
+  }
+}
+
+
+/* =========================================================
+   INNER ORBIT
+   ========================================================= */
+
+@keyframes wibSignalInner {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg)
+      translateX(142px);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg)
+      translateX(142px);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .wib-signal-cyan {
+    animation-name: wibSignalOuterMobile;
+  }
+
+  .wib-signal-green {
+    animation-name: wibSignalOuterReverseMobile;
+  }
+
+  .wib-signal-orange {
+    animation-name: wibSignalInnerMobile;
+  }
+}
+
+
+@keyframes wibSignalOuterMobile {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg)
+      translateX(162px);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg)
+      translateX(162px);
+  }
+}
+
+
+@keyframes wibSignalOuterReverseMobile {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg)
+      translateX(162px);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-360deg)
+      translateX(162px);
+  }
+}
+
+
+@keyframes wibSignalInnerMobile {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg)
+      translateX(110px);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg)
+      translateX(110px);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .wib-signal-cyan,
+  .wib-signal-green,
+  .wib-signal-orange {
+    animation: none;
+  }
+}

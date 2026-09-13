@@ -7,9 +7,9 @@ text = TEMPLATE.read_text(encoding="utf-8")
 text = text.replace("__INLINE_CSS__", (ROOT / "assets/css/style.css").read_text(encoding="utf-8"))
 text = text.replace("__INLINE_JS__", (ROOT / "assets/js/main.js").read_text(encoding="utf-8"))
 
-components = ["NAVBAR", "HERO", "ABOUT", "SKILLS", "PROJECTS", "EXPERIENCE", "EDUCATION", "CONTACT", "FOOTER"]
+components = ["NAVBAR", "HERO", "ABOUT", "WHAT_I_BUILD", "SKILLS", "PROJECTS", "EXPERIENCE", "EDUCATION", "CONTACT", "FOOTER"]
 for name in components:
-    path = ROOT / "components" / (name.lower() + ".html")
+    path = ROOT / "components" / (name.lower().replace("_", "-") + ".html")
     text = text.replace(f"__COMPONENT_{name}__", path.read_text(encoding="utf-8"))
 
 out = ROOT / "dist" / "index.html"
