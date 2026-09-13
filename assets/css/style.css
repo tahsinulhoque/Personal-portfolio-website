@@ -2429,19 +2429,3 @@
   }
 
 }
-
-/* =========================================================
-   REDUCE GAP BETWEEN SKILLS & PROJECTS
-   ========================================================= */
-
-#skills {
-  padding-bottom: 45px;
-}
-
-#skills + .divider {
-  margin: 0;
-}
-
-#projects {
-  padding-top: 55px;
-}
