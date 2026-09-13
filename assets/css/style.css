@@ -125,8 +125,7 @@
     .cur{display:inline-block;width:8px;height:14px;background:var(--accent);vertical-align:middle;animation:blink .7s step-end infinite;}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 
-
-    /* PROJECTS */
+  /* PROJECTS */
     .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.5rem}
     .proj-card{padding:2rem;display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden}
     .proj-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .4s ease;}
@@ -144,22 +143,579 @@
     .proj-card.add-c:hover{transform:none!important}
     .add-c i{font-size:1.5rem;color:var(--text3)}
     .add-c span{font-family:var(--fm);font-size:.76rem;color:var(--text3);text-align:center}
+  
+   /* =========================================================
+   EXPERIENCE & LEADERSHIP
+   ========================================================= */
 
-    /* EXPERIENCE — timeline */
-    .tl{position:relative;padding-left:1.8rem}
-    .tl::before{content:'';position:absolute;left:0;top:10px;bottom:10px;width:1px;background:linear-gradient(to bottom,var(--accent),rgba(6,182,212,.1));}
-    .tl-item{position:relative;margin-bottom:2.5rem}
-    .tl-item:last-child{margin-bottom:0}
-    .tl-dot{position:absolute;left:-2.35rem;top:8px;width:13px;height:13px;border-radius:50%;border:2px solid var(--accent);background:var(--bg);transition:background .3s;}
-    .tl-item:hover .tl-dot{background:var(--accent)}
-    .tl-card{padding:2rem 2.2rem}
-    .tl-hd{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:1.2rem;}
-    .tl-role{font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--text);}
-    .tl-co{font-family:var(--fm);font-size:.78rem;color:var(--accent);margin-top:.3rem;}
-    .tl-date{font-family:var(--fm);font-size:.72rem;color:var(--text3);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:.3rem .85rem;border-radius:99px;white-space:nowrap;height:fit-content;}
-    .tl-ul{display:flex;flex-direction:column;gap:.65rem}
-    .tl-ul li{display:flex;gap:.8rem;font-size:.9rem;color:var(--text2);line-height:1.75;text-align:justify;}
-    .tl-ul li::before{content:'—';color:var(--accent);flex-shrink:0;font-weight:600}
+#experience {
+  padding: 100px 0 110px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.exp-header {
+  width: min(1180px, 90%);
+  margin: 0 auto 75px;
+}
+
+.exp-intro {
+  max-width: 650px;
+  margin: 22px 0 0;
+  color: #8fa2bb;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.exp-timeline {
+  position: relative;
+  width: min(1180px, 90%);
+  margin: 0 auto;
+  padding: 5px 0 20px;
+}
+
+
+/* ---------- Central Timeline ---------- */
+
+.exp-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(0, 200, 255, 0.45) 8%,
+      rgba(0, 200, 255, 0.28) 92%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   TIMELINE ITEM
+   ========================================================= */
+
+.exp-item {
+  position: relative;
+  width: 50%;
+  margin-bottom: 55px;
+}
+
+
+/* Left / Right positioning */
+
+.exp-left {
+  padding-right: 52px;
+}
+
+.exp-right {
+  margin-left: 50%;
+  padding-left: 52px;
+}
+
+
+/* =========================================================
+   TIMELINE DOT
+   ========================================================= */
+
+.exp-dot {
+  position: absolute;
+  top: 35px;
+
+  width: 15px;
+  height: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #071522;
+  border: 2px solid #00c8ff;
+
+  box-shadow:
+    0 0 8px rgba(0, 200, 255, 0.55),
+    0 0 22px rgba(0, 200, 255, 0.22);
+
+  z-index: 5;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* Dot position */
+
+.exp-left .exp-dot {
+  right: -8px;
+}
+
+.exp-right .exp-dot {
+  left: -8px;
+}
+
+
+/* Number inside dot */
+
+.exp-dot span {
+  display: none;
+}
+
+
+/* =========================================================
+   EXPERIENCE CARD
+   ========================================================= */
+
+.exp-card {
+  position: relative;
+
+  padding: 30px 30px 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 31, 51, 0.94),
+      rgba(8, 20, 36, 0.97)
+    );
+
+  border: 1px solid rgba(0, 200, 255, 0.14);
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* ---------- Top Highlight ---------- */
+
+.exp-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 25px;
+  right: 25px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 200, 255, 0.55),
+      transparent
+    );
+
+  opacity: 0.65;
+}
+
+
+/* ---------- Soft Background Glow ---------- */
+
+.exp-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  top: -100px;
+  right: -80px;
+
+  background: rgba(0, 200, 255, 0.07);
+
+  border-radius: 50%;
+  filter: blur(35px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SUBTLE NUMBER
+   ========================================================= */
+
+.exp-number {
+  position: absolute;
+
+  top: 18px;
+  right: 22px;
+
+  color: rgba(0, 200, 255, 0.22);
+
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   TOP AREA
+   ========================================================= */
+
+.exp-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   ROLE
+   ========================================================= */
+
+.exp-role {
+  color: #f4f8ff;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   COMPANY
+   ========================================================= */
+
+.exp-company {
+  margin-top: 7px;
+
+  color: #00c8ff;
+
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   DATE PILL
+   ========================================================= */
+
+.exp-date {
+  flex-shrink: 0;
+
+  padding: 7px 12px;
+
+  color: #8fa2bb;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 30px;
+
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.exp-list {
+  position: relative;
+  z-index: 2;
+
+  margin: 24px 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.exp-list li {
+  position: relative;
+
+  margin-bottom: 11px;
+  padding-left: 18px;
+
+  color: #91a5bd;
+
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+
+.exp-list li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Cyan bullet */
+
+.exp-list li::before {
+  content: "—";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  color: #00c8ff;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SKILL / AREA TAGS
+   ========================================================= */
+
+.exp-tags {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 20px;
+}
+
+
+.exp-tags span {
+  padding: 6px 10px;
+
+  color: #00c8ff;
+
+  background: rgba(0, 200, 255, 0.055);
+
+  border: 1px solid rgba(0, 200, 255, 0.15);
+
+  border-radius: 20px;
+
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.exp-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(0, 200, 255, 0.42);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 38, 62, 0.97),
+      rgba(8, 22, 39, 0.99)
+    );
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.32),
+    0 0 24px rgba(0, 200, 255, 0.11),
+    0 0 55px rgba(0, 200, 255, 0.055),
+    inset 0 0 25px rgba(0, 200, 255, 0.025);
+}
+
+
+/* Dot reacts when card is hovered */
+
+.exp-item:hover .exp-dot {
+  transform: scale(1.18);
+
+  background: #00c8ff;
+
+  box-shadow:
+    0 0 10px rgba(0, 200, 255, 0.9),
+    0 0 28px rgba(0, 200, 255, 0.55),
+    0 0 55px rgba(0, 200, 255, 0.25);
+}
+
+
+/* Tags hover */
+
+.exp-card:hover .exp-tags span {
+  background: rgba(0, 200, 255, 0.09);
+  border-color: rgba(0, 200, 255, 0.25);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .exp-timeline::before {
+    left: 18px;
+  }
+
+  .exp-item,
+  .exp-left,
+  .exp-right {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 55px;
+    padding-right: 0;
+  }
+
+  .exp-left .exp-dot,
+  .exp-right .exp-dot {
+    left: 10px;
+    right: auto;
+  }
+
+  .exp-item {
+    margin-bottom: 30px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #experience {
+    padding: 75px 0 80px;
+  }
+
+  .exp-header {
+    margin-bottom: 50px;
+  }
+
+  .exp-intro {
+    font-size: 14px;
+  }
+
+  .exp-timeline {
+    width: 92%;
+  }
+
+  .exp-timeline::before {
+    left: 10px;
+  }
+
+  .exp-item,
+  .exp-left,
+  .exp-right {
+    padding-left: 35px;
+  }
+
+  .exp-left .exp-dot,
+  .exp-right .exp-dot {
+    left: 3px;
+  }
+
+  .exp-card {
+    padding: 25px 20px 23px;
+    border-radius: 17px;
+  }
+
+  .exp-top {
+    display: block;
+  }
+
+  .exp-role {
+    font-size: 17px;
+    padding-right: 25px;
+  }
+
+  .exp-company {
+    font-size: 10px;
+  }
+
+  .exp-date {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 9px;
+  }
+
+  .exp-list {
+    margin-top: 20px;
+  }
+
+  .exp-list li {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .exp-tags {
+    margin-top: 17px;
+  }
+
+  .exp-tags span {
+    font-size: 8px;
+    padding: 5px 8px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .exp-card,
+  .exp-dot,
+  .exp-tags span {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   EXPERIENCE → EDUCATION COMPACT SPACING
+   ========================================================= */
+
+#experience {
+  padding-bottom: 35px;
+}
+
+#experience + .divider {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#experience + .divider + #education {
+  padding-top: 45px;
+}
 
     /* EDUCATION */
     .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:1.25rem;margin-bottom:3rem}
