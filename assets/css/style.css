@@ -3929,3 +3929,141 @@
   }
 
 }
+
+/* ========== PROJECT GRID: ak row te 3 ta ========== */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;            /* shob card er height soman */
+}
+
+@media (max-width: 1024px) {
+  .proj-grid { grid-template-columns: repeat(2, 1fr); }   /* tablet: 2 ta */
+}
+
+@media (max-width: 640px) {
+  .proj-grid { grid-template-columns: 1fr; }              /* mobile: 1 ta */
+}
+
+/* ========== CARD ========== */
+.proj-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;                    /* grid er vitore overflow thekate */
+  overflow: hidden;
+}
+
+/* ========== ARCHITECTURE IMAGE ========== */
+.proj-image-wrap {
+  position: relative;              /* overlay er jonno must */
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #fff;                /* diagram er background white */
+}
+
+.proj-image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+}
+
+.proj-architecture {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;             /* pura diagram dekha jabe */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.proj-card:hover .proj-architecture {
+  transform: scale(1.04);
+}
+
+/* AWS / tech badge - top left */
+.proj-image-ico {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  font-size: 1.15rem;
+  color: #ff9900;
+  background: rgba(17, 24, 39, 0.88);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+/* GitHub link - top right, image er upore */
+.proj-image-github {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(17, 24, 39, 0.88);
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.proj-image-github i:first-child { font-size: 0.95rem; }
+.proj-image-github i:last-child  { font-size: 0.6rem; opacity: 0.8; }
+
+.proj-image-github:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+.proj-image-github:focus-visible,
+.proj-image-link:focus-visible {
+  outline: 2px solid #a5b4fc;
+  outline-offset: 2px;
+}
+
+/* ========== DETAILS ========== */
+/* Text, description ar skill tag er color/font tomar ager CSS theke ashbe.
+   Ekhane shudhu spacing thik rakha hoyeche, kono color/font override kora hoyni. */
+.proj-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0;
+}
+
+.proj-stack {
+  margin-top: auto;   /* skill gulo shob card e niche soman jaygay thakbe */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proj-architecture,
+  .proj-image-github { transition: none; }
+  .proj-card:hover .proj-architecture { transform: none; }
+}
+
+/* Projects title: ak line e + niche halka space */
+#projects .s-title {
+  white-space: nowrap;      /* ak line e thakbe */
+  margin-bottom: 40px;      /* card er age space, ektu beshi/kom korte chaile ei number bodlao */
+}
+
+/* Choto screen e jate title screen er baire na jay, wrap hote dao */
+@media (max-width: 640px) {
+  #projects .s-title {
+    white-space: normal;
+    margin-bottom: 28px;
+  }
+}

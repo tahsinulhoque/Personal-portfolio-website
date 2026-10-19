@@ -3,146 +3,257 @@
   <span class="s-badge rv">Portfolio</span>
 
   <h2 class="s-title rv d1">
-    Featured<br />
-    <span>Projects</span>
+    Featured <span>Projects</span>
   </h2>
 
-  <div class="proj-grid">
-
-    <!-- PROJECT 1 -->
-    <div class="proj-card gc rv d1">
-
-      <div class="proj-top">
-        <div class="proj-ico">
-          <i class="fa-brands fa-aws"></i>
-        </div>
-
-        <div class="proj-lks">
-          <a
-            href="https://github.com/tahsinulhoque/DevFlow-Dashboard"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="pl"
-          >
-            <i class="fa-brands fa-github"></i>
-            GitHub
-          </a>
-        </div>
+<!-- ========== PROJECTS GRID (ak row te 3 ta card) ========== -->
+<div class="proj-grid">
+ 
+  <!-- PROJECT 1 -->
+  <div class="proj-card gc rv d1">
+ 
+    <div class="proj-image-wrap">
+      <!-- Image click korle full size e notun tab e khulbe -->
+      <a
+        href="Public/Images/Projects/Production%20Full-Stack%20Deployment%20on%20AWS.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="proj-image-link"
+        aria-label="Open architecture diagram in full size"
+      >
+        <img
+          src="Public/Images/Projects/Production%20Full-Stack%20Deployment%20on%20AWS.png"
+          alt="Production Full-Stack Deployment on AWS Architecture"
+          class="proj-architecture"
+          loading="lazy"
+        />
+      </a>
+ 
+      <!-- AWS badge (top-left) -->
+      <div class="proj-image-ico" aria-hidden="true">
+        <i class="fa-brands fa-aws"></i>
       </div>
-
-      <div class="proj-name">
-        Production Full-Stack Deployment on AWS
-      </div>
-
+ 
+      <!-- GitHub link (top-right, image er upore) -->
+      <a
+        href="https://github.com/tahsinulhoque/DevFlow-Dashboard"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="proj-image-github"
+        aria-label="View project on GitHub"
+      >
+        <i class="fa-brands fa-github"></i>
+        <span>GitHub</span>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+ 
+    <div class="proj-body">
+      <div class="proj-name">Production Full-Stack Deployment on AWS</div>
+ 
       <div class="proj-desc">
-        Architected and deployed a full-stack React + Node.js application
-        on AWS using ECS Fargate, Application Load Balancer, S3 and
-        CloudFront. Infrastructure was provisioned with Terraform and
-        deployments were automated through GitHub Actions.
+        Deployed a full-stack React and Node.js application on AWS using
+        ECS Fargate, S3, CloudFront and Terraform, with automated
+        deployments through GitHub Actions.
       </div>
-
+ 
       <div class="proj-stack">
+        <span class="sp">AWS</span>
         <span class="sp">Docker</span>
         <span class="sp">Terraform</span>
         <span class="sp">ECS Fargate</span>
         <span class="sp">GitHub Actions</span>
-        <span class="sp">Grafana</span>
         <span class="sp">CloudWatch</span>
       </div>
+    </div>
+ 
+  </div>
 
+
+<!-- PROJECT 2 -->
+<div class="proj-card gc rv d2">
+
+  <div class="proj-image-wrap">
+    <a
+      href="Public/Images/Projects/CloudScale%20DevOps%20API%20Platform.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="proj-image-link"
+      aria-label="Open architecture diagram in full size"
+    >
+      <img
+        src="Public/Images/Projects/CloudScale%20DevOps%20API%20Platform.png"
+        alt="CloudScale DevOps API Platform Architecture"
+        class="proj-architecture"
+        loading="lazy"
+      />
+    </a>
+
+    <!-- AWS badge (top-left) -->
+    <div class="proj-image-ico" aria-hidden="true">
+      <i class="fa-brands fa-aws"></i>
     </div>
 
+    <!-- GitHub link (top-right) -->
+    <a
+      href="https://github.com/tahsinulhoque/qsl-devops-engineer-task"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="proj-image-github"
+      aria-label="View project on GitHub"
+    >
+      <i class="fa-brands fa-github"></i>
+      <span>GitHub</span>
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+  </div>
 
-    <!-- PROJECT 2 -->
-    <div class="proj-card gc rv d2">
+  <div class="proj-body">
+    <div class="proj-name">CloudScale DevOps API Platform</div>
 
-      <div class="proj-top">
-        <div class="proj-ico">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-
-        <div class="proj-lks">
-          <a
-            href="https://github.com/tahsinulhoque/qsl-devops-engineer-task"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="pl"
-          >
-            <i class="fa-brands fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="proj-name">
-        CloudScale DevOps API Platform
-      </div>
-
-      <div class="proj-desc">
-        Designed and deployed a cloud-native REST API platform on AWS
-        using Terraform, Docker and Nginx. Implemented CI/CD automation,
-        load balancing and centralized monitoring to support reliable
-        application delivery and infrastructure management.
-      </div>
-
-      <div class="proj-stack">
-        <span class="sp">Terraform</span>
-        <span class="sp">REST API</span>
-        <span class="sp">Docker</span>
-        <span class="sp">Nginx</span>
-        <span class="sp">Node.js</span>
-        <span class="sp">CI/CD</span>
-        <span class="sp">Load Balancing</span>
-        <span class="sp">AWS</span>
-      </div>
-
+    <div class="proj-desc">
+      Designed and deployed a cloud-native REST API platform on AWS
+      using Terraform, Docker and Nginx. Implemented CI/CD automation,
+      load balancing and centralized monitoring to support reliable
+      application delivery and infrastructure management.
     </div>
 
+    <div class="proj-stack">
+      <span class="sp">Terraform</span>
+      <span class="sp">REST API</span>
+      <span class="sp">Docker</span>
+      <span class="sp">Nginx</span>
+      <span class="sp">Node.js</span>
+      <span class="sp">CI/CD</span>
+      <span class="sp">Load Balancing</span>
+      <span class="sp">AWS</span>
+    </div>
+  </div>
 
-    <!-- PROJECT 3 -->
-    <div class="proj-card gc rv d3">
+</div>
 
-      <div class="proj-top">
-        <div class="proj-ico">
-          <i class="fa-brands fa-python"></i>
-        </div>
 
-        <div class="proj-lks">
-          <a
-            href="https://github.com/tahsinulhoque/flask-devops-cicd-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="pl"
-          >
-            <i class="fa-brands fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
+<!-- PROJECT 3 -->
+<div class="proj-card gc rv d5">
 
-      <div class="proj-name">
-        End-to-End CI/CD Pipeline on AWS
-      </div>
+  <div class="proj-image-wrap">
+    <a
+      href="Public/Images/Projects/Node.js%20Grocery%20API%20%28Dockerized%20%2B%20CI%29.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="proj-image-link"
+      aria-label="Open architecture diagram in full size"
+    >
+      <img
+        src="Public/Images/Projects/Node.js%20Grocery%20API%20%28Dockerized%20%2B%20CI%29.png"
+        alt="Node.js Grocery API (Dockerized + CI) Architecture"
+        class="proj-architecture"
+        loading="lazy"
+      />
+    </a>
 
-      <div class="proj-desc">
-        Built an automated CI/CD pipeline for a Dockerized Flask
-        application deployed on AWS EC2. GitHub Actions handles testing
-        and image builds, while SSH-based deployment automates application
-        updates and container restarts.
-      </div>
-
-      <div class="proj-stack">
-        <span class="sp">Flask</span>
-        <span class="sp">Docker</span>
-        <span class="sp">GitHub Actions</span>
-        <span class="sp">EC2</span>
-        <span class="sp">SSH</span>
-      </div>
-
+    <!-- Node.js badge (top-left) -->
+    <div class="proj-image-ico" aria-hidden="true">
+      <i class="fa-brands fa-node-js"></i>
     </div>
 
+    <!-- GitHub link (top-right) -->
+    <a
+      href="https://github.com/tahsinulhoque/node-express-grocery-app"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="proj-image-github"
+      aria-label="View project on GitHub"
+    >
+      <i class="fa-brands fa-github"></i>
+      <span>GitHub</span>
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+  </div>
 
-    <!-- PROJECT 4 -->
+  <div class="proj-body">
+    <div class="proj-name">Node.js Grocery API (Dockerized + CI)</div>
+
+    <div class="proj-desc">
+      Built a Node.js and Express REST API containerized with Docker.
+      GitHub Actions automates multi-version testing and security checks,
+      while versioned Docker images are published to DockerHub as part
+      of the CI workflow.
+    </div>
+
+    <div class="proj-stack">
+      <span class="sp">Node.js</span>
+      <span class="sp">Express</span>
+      <span class="sp">Docker</span>
+      <span class="sp">GitHub Actions</span>
+      <span class="sp">DockerHub</span>
+    </div>
+  </div>
+
+</div>
+
+
+   <!-- PROJECT 4 -->
+<div class="proj-card gc rv d3">
+
+  <div class="proj-image-wrap">
+    <a
+      href="Public/Images/Projects/End%20to%20End%20CI%20CD%20Pipeline%20on%20AWS.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="proj-image-link"
+      aria-label="Open architecture diagram in full size"
+    >
+      <img
+        src="Public/Images/Projects/End%20to%20End%20CI%20CD%20Pipeline%20on%20AWS.png"
+        alt="End-to-End CI/CD Pipeline on AWS Architecture"
+        class="proj-architecture"
+        loading="lazy"
+      />
+    </a>
+
+    <!-- Python badge (top-left) -->
+    <div class="proj-image-ico" aria-hidden="true">
+      <i class="fa-brands fa-python"></i>
+    </div>
+
+    <!-- GitHub link (top-right) -->
+    <a
+      href="https://github.com/tahsinulhoque/flask-devops-cicd-app"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="proj-image-github"
+      aria-label="View project on GitHub"
+    >
+      <i class="fa-brands fa-github"></i>
+      <span>GitHub</span>
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+  </div>
+
+  <div class="proj-body">
+    <div class="proj-name">End-to-End CI/CD Pipeline on AWS</div>
+
+    <div class="proj-desc">
+      Built an automated CI/CD pipeline for a Dockerized Flask
+      application deployed on AWS EC2. GitHub Actions handles testing
+      and image builds, while SSH-based deployment automates application
+      updates and container restarts.
+    </div>
+
+    <div class="proj-stack">
+      <span class="sp">Flask</span>
+      <span class="sp">Docker</span>
+      <span class="sp">GitHub Actions</span>
+      <span class="sp">EC2</span>
+      <span class="sp">SSH</span>
+    </div>
+  </div>
+
+</div>
+
+
+    <!-- PROJECT 5 -->
     <div class="proj-card gc rv d4">
 
       <div class="proj-top">
@@ -181,49 +292,6 @@
         <span class="sp">ECS</span>
         <span class="sp">IAM</span>
         <span class="sp">CloudWatch</span>
-      </div>
-
-    </div>
-
-
-    <!-- PROJECT 5 -->
-    <div class="proj-card gc rv d5">
-
-      <div class="proj-top">
-        <div class="proj-ico">
-          <i class="fa-solid fa-cube"></i>
-        </div>
-
-        <div class="proj-lks">
-          <a
-            href="https://github.com/tahsinulhoque/node-express-grocery-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="pl"
-          >
-            <i class="fa-brands fa-github"></i>
-            GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="proj-name">
-        Node.js Grocery API (Dockerized + CI)
-      </div>
-
-      <div class="proj-desc">
-        Built a Node.js and Express REST API containerized with Docker.
-        GitHub Actions automates multi-version testing and security checks,
-        while versioned Docker images are published to DockerHub as part
-        of the CI workflow.
-      </div>
-
-      <div class="proj-stack">
-        <span class="sp">Node.js</span>
-        <span class="sp">Express</span>
-        <span class="sp">Docker</span>
-        <span class="sp">GitHub Actions</span>
-        <span class="sp">DockerHub</span>
       </div>
 
     </div>
